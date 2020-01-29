@@ -1,14 +1,16 @@
 
+
+
 <div class="card card-body bg-danger text-white py-5">
   <h2>Contact</h2>
-  <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, laborum.</p>
+  <p class="lead">In the form below you can send me an e-mail</p>
 </div>
 
 <div class="card card-body py-5">
   <h3>Get In Touch</h3>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, ipsum cum!</p>
+  <p></p>
 
-      <form>
+      <form [formGroup]="registerForm"   (ngSubmit)="onSubmit(registerForm); "  >
         <div class="form-group">
           <div class="input-group input-group-lg">
             <div class="input-group-prepend">
@@ -17,7 +19,11 @@
                 </i>
               </span>
             </div>
-            <input type="text" class="form-control bg-dark text-white" placeholder="Name">
+            <input  type="text" class="form-control bg-dark text-white" placeholder="Name"     formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"    >
+            <div *ngIf="!clear && submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">Name is required</div>
+          </div>
+          
           </div>
         </div>
 
@@ -29,7 +35,11 @@
                 </i>
               </span>
             </div>
-            <input type="email" class="form-control bg-dark text-white" placeholder="Email">
+            <input type="email" class="form-control bg-dark text-white" placeholder="Email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors } "  >
+            <div *ngIf="!clear && submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          </div>
           </div>
         </div>
 
@@ -41,11 +51,16 @@
                 </i>
               </span>
             </div>
-            <textarea class="form-control bg-dark text-white" placeholder="Name">
+            <textarea class="form-control bg-dark text-white" placeholder="Name" formControlName="emailtext"  >
               </textarea>
           </div>
         </div>
-        <input type="submit" value="Submit" class="btn btn-danger btn-block btn-lg">
-
+       
+        <div class="form-group">
+          <button class="btn btn-danger btn-block btn-lg">Register
+    
+          </button>
+         
+      </div>
       </form>
 </div>

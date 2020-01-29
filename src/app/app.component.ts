@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {  ElementRef,  ViewChild } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -20,7 +21,7 @@ validation : boolean= false;
 
 
   // 4.
-  constructor(private router: Router,  db: AngularFireDatabase) {
+  constructor(private router: Router,  db: AngularFireDatabase, private spinner: NgxSpinnerService) {
     db.list('/user').valueChanges().subscribe(user => {
       this.user_name = user
       console.log("valore: " + this.user_name)
