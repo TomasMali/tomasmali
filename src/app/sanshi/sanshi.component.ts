@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  HttpClient } from '@angular/common/http';
+import {  HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sanshi',
@@ -12,7 +14,8 @@ export class SanshiComponent implements OnInit {
 
   allUsers: []
 
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient, public _router: Router, private _auth: AuthService) { 
+    localStorage.setItem('lastRout', 'myprojects/sanshi')
     this.http
     .get('http://93.49.6.246:3000/users/').subscribe((response)=> {
       console.log(response)
@@ -23,7 +26,18 @@ export class SanshiComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this._auth.checkToken()
+    .subscribe(
+      res => res = res,
+      err => {
+      //  alert("Login is requred!")
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 500) {
+          this._router.navigate(['/login'])
+          }
+        }
+      }
+    )
   }
 
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -8,15 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
- 
+  loginUserData = {}
+  rememberMe = false
 
-
-  constructor() { }
+  constructor(private _router: Router, private _auth: AuthService) { }
+  
   ngOnInit() {
 
   }
-  onClickSubmit(data) {
-     alert("Entered Email id : " + data.emailid + "\n Password is" + data.passwd);
+
+
+  loginUser() {
+    console.log(this.loginUserData)
+    this._auth.loginUser(this.loginUserData)
+    .subscribe(
+      res => {
+     //   console.log(res)
+        localStorage.setItem('token', res.token)
+        this._router.navigate(['admin'])
+      },
+      err => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+          //  this._router.navigate(['/resume'])
+          alert("Email o Password sbagliato!")
+          }
+        }
+      }
+      
+    )
+    
   }
 
 }

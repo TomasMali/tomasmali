@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms'
 import { NgxSpinnerModule } from "ngx-spinner";
 
@@ -25,19 +25,59 @@ import { LocationStrategy, HashLocationStrategy, APP_BASE_HREF } from '@angular/
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
 import { SanshiComponent } from './sanshi/sanshi.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AdminComponent } from './admin/admin.component';
+import { UploadImageService } from './upload-image.service';
 
 
 // 2.
 const routes: Routes = [
   // basic routes
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'resume', component: ResumeComponent },
-  { path: 'work', component: WorkComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'contactus', redirectTo: 'contact' },
-  { path: 'login', component: LoginComponent },
-  {path: 'myprojects/sanshi', component: SanshiComponent }
+  { 
+    path: '', redirectTo: 'home', 
+    pathMatch: 'full' 
+  },
+  { 
+    path: 'home', 
+    component: HomeComponent 
+  },
+  { 
+    path: 'resume',
+     component: ResumeComponent 
+    },
+  { 
+    path: 'work',
+    component: WorkComponent
+  },
+  { 
+    path: 'contact', 
+    component: ContactComponent 
+  },
+  { 
+    path: 'contactus', 
+    redirectTo: 'contact' 
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent 
+  },
+  {
+    path: 'myprojects/sanshi', 
+    component: SanshiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'admin',
+    canActivate: [AuthGuard],
+    component: AdminComponent
+  }
 ];
 
 
@@ -52,7 +92,9 @@ const routes: Routes = [
     WorkComponent,
     ContactComponent,
     LoginComponent,
-    SanshiComponent
+    SanshiComponent,
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -71,8 +113,16 @@ const routes: Routes = [
     GithubService,
    UserService,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    {provide: APP_BASE_HREF, useValue: '/'}
-    
+    {provide: APP_BASE_HREF, useValue: '/'},
+    // Da qui solo per Authentication
+    AuthService,
+    AuthGuard,
+    UploadImageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

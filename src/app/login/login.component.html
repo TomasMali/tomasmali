@@ -1,1 +1,53 @@
-ciao in login page!
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header bg-primary text-white">
+      <h5 class="modal-title" id="exampleModalLabel">Login administrator</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="container">
+
+
+        <form class="form">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white">
+                <i class="fas fa-envelope">
+                </i>
+              </span>
+              <input type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary text-white">
+                <i class="fas fa-lock">
+                </i>
+              </span>
+              <input type="password" class="form-control rounded-0" [(ngModel)]="loginUserData.password" name="password"
+                required>
+            </div>
+
+          </div>
+          <div class="form-group form-check">
+            <label class="form-check-label">
+
+              <input class="form-check-input" type="checkbox" name="remember" [(ngModel)]="loginUserData.rememberMe">
+              Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="loginUser()">Login</button>
+          <a type="submit" class=" float-right" data-dismiss="modal" routerLink="/register">Register</a>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
