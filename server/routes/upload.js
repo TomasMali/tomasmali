@@ -11,7 +11,7 @@ const multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/Volumes/Tomas - Server1/upload')
+        cb(null, '/External/upload')
     },
     filename: function (req, file, cb) {
         cb(null, new Date().toISOString() + file.originalname)
@@ -49,6 +49,9 @@ router.post('/files', upload.array('myImages'), (req, res, next) => {
     console.log(req.file)
     res.status(200).send(req.file)
 })
+
+
+
 
 
 

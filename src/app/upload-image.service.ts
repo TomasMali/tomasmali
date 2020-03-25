@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UploadImageService {
-  private uploadUrl = "http://localhost:3000/upload/files";
+  private uploadUrl = "http://192.168.1.129:3000/upload/files";
   constructor(private http: HttpClient) { }
 
   uploadMyImage(image){
