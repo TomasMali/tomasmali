@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col">
+
+    <div class="container mt-3">
+      <h5>Upload Images</h5>
+      <form #imagesForm="ngForm">
+        <div class="custom-file mb-3">
+
+          <input type="file" multiple class="input-sm custom-file-input " id="customFile" name="filename"
+            (change)="onMultipleImagesSelected($event)">
+          <label class="custom-file-label" for="customFile">{{hint}}</label>
+        </div>
+
+        <button type="button" [disabled]="!files.length" type="submit" class="btn btn-primary btn-sm"
+          (click)="onImagesUpload(); imagesForm.reset()">Send images
+          <div class="spinner-border spinner-border-sm" *ngIf="progress >= 100" ></div>
+        </button>
+
+        <!-- Progress Bar -->
+        <br>        <br>
+        <div class="progress form-group" *ngIf="progress !=0 && 100 >= progress">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+            {{progress}}%
+          </div>
+        </div>
+        <p class=" text-success" *ngIf="statusBarImage == 'Files successfully uploaded!'">{{statusBarImage}}</p>
+        <p class=" text-warning" *ngIf="statusBarImage == 'Uploading.......'">{{statusBarImage}}</p>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="col">
+    <div class="container mt-3">
+      <h5>Upload files</h5>
+      <form #filesForm="ngForm">
+        <div class="custom-file mb-3">
+          <input type="file" multiple class="input-sm custom-file-input " id="customFile" name="filename"
+            (change)="onMultipleFilesSelected($event)">
+          <label class="custom-file-label" for="customFile">{{hintFiles}}</label>
+        </div>
+
+        <button type="button" [disabled]="!files_files.length" type="submit" class="btn btn-primary btn-sm"
+          (click)="onFilesUpload(); filesForm.reset()">
+          Send files
+          <div class="spinner-border spinner-border-sm" *ngIf="progress_file >= 100" ></div>
+        </button>
+
+        <!-- Progress Bar -->
+        <br>        <br>
+        <div class="progress form-group" *ngIf="progress_file !=0 && 100 >= progress_file">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress_file">
+            {{progress_file}}%
+          </div>
+        </div>
+        <p class=" text-success" *ngIf="statusBar == 'Files successfully uploaded!'">{{statusBar}}</p>
+        <p class=" text-warning" *ngIf="statusBar == 'Uploading.......'">{{statusBar}}</p>
+      </form>
+    </div>
+  </div>
+</div>

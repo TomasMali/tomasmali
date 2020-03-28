@@ -31,6 +31,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AdminComponent } from './admin/admin.component';
 import { UploadImageService } from './upload-image.service';
+import { UploadComponent } from './upload/upload.component';
 
 
 // 2.
@@ -78,6 +79,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: AdminComponent
   }
+  ,
+  {
+    path: 'upload',
+    component: UploadComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 
@@ -94,7 +101,8 @@ const routes: Routes = [
     LoginComponent,
     SanshiComponent,
     RegisterComponent,
-    AdminComponent
+    AdminComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
