@@ -6,12 +6,18 @@ const router = express.Router();
 
 const multer = require('multer')
 
+const path = require("path");
+const fs = require("fs");
 
 
+const mac_img = "/Users/tomas/Desktop/uploads/Images"
+const mac_fol = "/Users/tomas/Desktop/uploads/Files"
+const rasp_img = "/External/uploads/Images"
+const rasp_fol = "/External/uploads/Files"
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/External/uploads/Images')
+        cb(null, rasp_img)
     },
     filename: function (req, file, cb) {
         cb(null, new Date().toISOString() + file.originalname)
@@ -19,7 +25,7 @@ var storage = multer.diskStorage({
 })
 var storageFiles = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/External/uploads/Files')
+        cb(null, rasp_fol)
     },
     filename: function (req, file, cb) {
         cb(null, new Date().toISOString() + file.originalname)
@@ -84,6 +90,13 @@ router.post('/images', uploadImages.array('myImages'), (req, res, next) => {
 })
 
 
+
+router.get("/getme", (req, res) => {
+    console.log("***** " + path)
+    res.sendFile("/Users/tomas/Desktop/uploads/Images/cio.JPG");
+  });
+
+  router.use('/images', express.static(path.join("/Users/tomas/Desktop/uploads/", 'Images/cio.JPG')));
 
 
 //   

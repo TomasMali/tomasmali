@@ -32,6 +32,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { AdminComponent } from './admin/admin.component';
 import { UploadImageService } from './upload-image.service';
 import { UploadComponent } from './upload/upload.component';
+import { AlbumComponent } from './album/album.component';
 
 
 // 2.
@@ -102,7 +103,8 @@ const routes: Routes = [
     SanshiComponent,
     RegisterComponent,
     AdminComponent,
-    UploadComponent
+    UploadComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,20 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n\n\n\n    <div class=\"jumbotron mb-0\">\n  \n      <h4 class=\"text-center\"> Modulo di correzione file</h4>\n   <br>\n      <h6 class=\"font-italic font-weight-normal \">\n        La seguente pagina permette di caricare dal PC un file di testo valido, visualizzare il contenuto del file attraverso il text box, e una volta inviato con il bottone Send, verrà scaricato un file contenente le correzioni. Il file avrà il nome e l'estensione del file precedentemente caricato più l'aggiunta della stringa \"_ELAB\".\n      E' possibile caricare il file da correggere attraverso il bottone Browse oppure trascinando direttamente il file nell'area Browse.\n      Il file che verrà scaricato avrà le modifiche opportune dove necessario (aggiunta dei tab), invece rimarrà invariata la prima riga di intestazione. \n      </h6>\n  \n      <br>\n  \n      <div class=\"container mt-3\">\n        <h5>Upload files</h5>\n        <form #myForm=\"ngForm\">\n          <div class=\"custom-file mb-3\">\n            <input type=\"file\" multiple class=\"custom-file-input\" id=\"customFile\" name=\"filename\"\n              (change)=\"onMultipleFileSelected($event)\">\n            <label class=\"custom-file-label\" for=\"customFile\">{{hint}}</label>\n          </div>\n          <div class=\"mt-3\">\n            <button type=\"button\" [disabled]=\"files === null\" type=\"submit\" class=\"btn btn-primary btn-lg\" (click)=\"onUpload(); myForm.reset()\">Send</button>\n          </div>\n        </form>\n      </div>\n  \n  <br>\n  <hr>  \n  \n    </div>\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n<div class=\"jumbotron mt-0 mb-0 pt-3\">\n\n<div class=\"row mt-3\">\n\n  <div class=\"col col-md-2 \">\n    <div class=\"nav flex-column nav-pills text-center \" id=\"v-pills-tab\" role=\"tablist\" aria-orientation=\"vertical\">\n      <a class=\"nav-link active\" id=\"v-pills-upload-tab\" data-toggle=\"pill\" href=\"#v-pills-upload\" role=\"tab\" aria-controls=\"v-pills-upload\" aria-selected=\"true\">Upload</a>\n      <a class=\"nav-link\" id=\"v-pills-album-tab\" data-toggle=\"pill\" href=\"#v-pills-album\" role=\"tab\" aria-controls=\"v-pills-album\" aria-selected=\"false\">Album</a>\n      <a class=\"nav-link\" id=\"v-pills-notes-tab\" data-toggle=\"pill\" href=\"#v-pills-notes\" role=\"tab\" aria-controls=\"v-pills-notes\" aria-selected=\"false\">Notes</a>\n      <a class=\"nav-link\" id=\"v-pills-settings-tab\" data-toggle=\"pill\" href=\"#v-pills-settings\" role=\"tab\" aria-controls=\"v-pills-settings\" aria-selected=\"false\">Settings</a>\n    </div>\n  </div>\n\n\n\n\n  <div class=\"col col-10-md ml-1 border border-secondary \">\n  \n    <div class=\"tab-content\" id=\"v-pills-tabContent\">\n      <div class=\"tab-pane fade show active\" id=\"v-pills-upload\" role=\"tabpanel\" aria-labelledby=\"v-pills-upload-tab\">       \n        <app-upload></app-upload>\n      </div>\n      <div class=\"tab-pane fade\" id=\"v-pills-album\" role=\"tabpanel\" aria-labelledby=\"v-pills-album-tab\">\n        <app-album></app-album>\n      </div>\n      <div class=\"tab-pane fade\" id=\"v-pills-notes\" role=\"tabpanel\" aria-labelledby=\"v-pills-notes-tab\">\n      </div>\n\n    </div>\n\n    <hr>\n\n    <div class=\"embed-responsive embed-responsive-16by9\">\n      <iframe class=\"embed-responsive-item\" src=\"http://93.49.6.246:4444/\" ></iframe>\n    </div>\n<br>\n\n  </div>\n</div>\n\n\n\n\n\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/album.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/album/album.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n\n<div class=\"embed-responsive embed-responsive-16by9\">\n    <iframe class=\"embed-responsive-item\" src=\"http://93.49.6.246:4444/\" ></iframe>\n  </div>");
 
 /***/ }),
 
@@ -101,6 +114,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <hr> \n  <h4 class=\"text-center \"> Resoconto tavolo: {{response.message[0].table}} </h4>\n  <hr> \n  <div class=\"container\">\n  <table class=\"table table-condensed table-light table-hover\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <th>Nome</th>\n        <th>Ordinate</th>\n        <th>Arrivate</th>\n        <th>Da Arrivare</th>\n      </tr>\n    </thead>\n    <tbody class=\"table-mini\" *ngFor=\"let item_list of response.message\">\n      <h5 class=\"text-center text-success\">{{item_list.name}}</h5 >\n      <tr *ngFor=\"let item of item_list.menus\">\n          <td>{{item.name}}</td>\n          <td>{{item.quantity}}</td>\n          <td>{{item.arrived}}</td>\n          <td>{{item.quantity-item.arrived}}</td>\n      </tr>\n\n    </tbody>\n  </table>\n</div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/upload/upload.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/upload/upload.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col\">\n\n    <div class=\"container mt-3\">\n      <h5>Upload Images</h5>\n      <form #imagesForm=\"ngForm\" >\n        <div class=\"custom-file mb-3\">\n\n          <input type=\"file\" multiple class=\"input-sm custom-file-input \" id=\"customFile\" name=\"filename\"\n            (change)=\"onMultipleImagesSelected($event)\">\n          <label class=\"custom-file-label\" for=\"customFile\">{{hint}}</label>\n        </div>\n\n        <button type=\"button\" [disabled]=\"!files.length\" type=\"submit\" class=\"btn btn-primary btn-sm\"\n          (click)=\"onImagesUpload(); imagesForm.reset()\">Send images\n          <div class=\"spinner-border spinner-border-sm\" *ngIf=\"progress >= 100\" ></div>\n        </button>\n\n        <!-- Progress Bar -->\n        <br>        <br>\n        <div class=\"progress form-group\" *ngIf=\"progress !=0 && 100 >= progress\">\n          <div class=\"progress-bar progress-bar-striped bg-success\" role=\"progressbar\" [style.width.%]=\"progress\">\n            {{progress}}%\n          </div>\n        </div>\n        <p class=\" text-success\" *ngIf=\"statusBarImage == 'Files successfully uploaded!'\">{{statusBarImage}}</p>\n        <p class=\" text-warning\" *ngIf=\"statusBarImage == 'Uploading.......'\">{{statusBarImage}}</p>\n      </form>\n    </div>\n\n  </div>\n\n\n\n\n  <div class=\"col\">\n    <div class=\"container mt-3\">\n      <h5>Upload files</h5>\n      <form #filesForm=\"ngForm\">\n        <div class=\"custom-file mb-3\">\n          <input type=\"file\" multiple class=\"input-sm custom-file-input \" id=\"customFile\" name=\"filename\"\n            (change)=\"onMultipleFilesSelected($event)\">\n          <label class=\"custom-file-label\" for=\"customFile\">{{hintFiles}}</label>\n        </div>\n\n        <button type=\"button\" [disabled]=\"!files_files.length\" type=\"submit\" class=\"btn btn-primary btn-sm\"\n          (click)=\"onFilesUpload(); filesForm.reset()\">\n          Send files\n          <div class=\"spinner-border spinner-border-sm\" *ngIf=\"progress_file >= 100\" ></div>\n        </button>\n\n        <!-- Progress Bar -->\n        <br>        <br>\n        <div class=\"progress form-group\" *ngIf=\"progress_file !=0 && 100 >= progress_file\">\n          <div class=\"progress-bar progress-bar-striped bg-success\" role=\"progressbar\" [style.width.%]=\"progress_file\">\n            {{progress_file}}%\n          </div>\n        </div>\n        <p class=\" text-success\" *ngIf=\"statusBar == 'Files successfully uploaded!'\">{{statusBar}}</p>\n        <p class=\" text-warning\" *ngIf=\"statusBar == 'Uploading.......'\">{{statusBar}}</p>\n      </form>\n    </div>\n  </div>\n\n\n\n  \n</div>");
 
 /***/ }),
 
@@ -378,7 +404,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MifQ== */");
 
 /***/ }),
 
@@ -394,75 +420,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _upload_image_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../upload-image.service */ "./src/app/upload-image.service.ts");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../auth.service */ "./src/app/auth.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
-
-
-
 
 
 var AdminComponent = /** @class */ (function () {
-    function AdminComponent(_uploadImageService, _auth, _router) {
-        this._uploadImageService = _uploadImageService;
-        this._auth = _auth;
-        this._router = _router;
-        this.hint = "Choose file";
-        this.file = null;
-        this.files = [];
-        this.specialEvents = null;
+    function AdminComponent() {
     }
     AdminComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._auth.checkToken()
-            .subscribe(function (res) { return _this.specialEvents = res; }, function (err) {
-            //  alert("Login is requred!")
-            if (err instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpErrorResponse"]) {
-                if (err.status === 500) {
-                    _this._router.navigate(['/login']);
-                }
-            }
-        });
     };
-    AdminComponent.prototype.onMultipleFileSelected = function (event) {
-        //  console.log(event)
-        this.hint = "";
-        for (var i = 0; i < event.target.files.length; i++) {
-            this.hint += event.target.files[i].name + " ";
-        }
-        // The file content itself
-        this.files = event.target.files;
-    };
-    AdminComponent.prototype.onUpload = function () {
-        var _this = this;
-        var formData = new FormData();
-        for (var _i = 0, _a = this.files; _i < _a.length; _i++) {
-            var image = _a[_i];
-            formData.append('myImages', image);
-        }
-        this._uploadImageService.uploadMyImage(formData)
-            .subscribe(function (res) {
-            _this.hint = "Choose file";
-            _this.files = null;
-            console.log(res);
-        }, function (err) { return console.log(err); });
-    };
-    AdminComponent.ctorParameters = function () { return [
-        { type: _upload_image_service__WEBPACK_IMPORTED_MODULE_2__["UploadImageService"] },
-        { type: _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
-    ]; };
     AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-admin',
             template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./admin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/admin/admin.component.html")).default,
             styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./admin.component.css */ "./src/app/admin/admin.component.css")).default]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_upload_image_service__WEBPACK_IMPORTED_MODULE_2__["UploadImageService"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], AdminComponent);
     return AdminComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/album/album.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/album/album.component.css ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FsYnVtL2FsYnVtLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/album/album.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/album/album.component.ts ***!
+  \******************************************/
+/*! exports provided: AlbumComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlbumComponent", function() { return AlbumComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AlbumComponent = /** @class */ (function () {
+    function AlbumComponent() {
+    }
+    AlbumComponent.prototype.ngOnInit = function () {
+    };
+    AlbumComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-album',
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./album.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/album/album.component.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./album.component.css */ "./src/app/album/album.component.css")).default]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AlbumComponent);
+    return AlbumComponent;
 }());
 
 
@@ -587,6 +607,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _token_interceptor_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./token-interceptor.service */ "./src/app/token-interceptor.service.ts");
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
 /* harmony import */ var _upload_image_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./upload-image.service */ "./src/app/upload-image.service.ts");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
+/* harmony import */ var _album_album_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./album/album.component */ "./src/app/album/album.component.ts");
 
 
 
@@ -603,6 +625,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // 1.
+
+
 
 
 
@@ -658,6 +682,11 @@ var routes = [
         path: 'admin',
         canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]],
         component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_24__["AdminComponent"]
+    },
+    {
+        path: 'upload',
+        component: _upload_upload_component__WEBPACK_IMPORTED_MODULE_26__["UploadComponent"],
+        canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_22__["AuthGuard"]]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -674,7 +703,9 @@ var AppModule = /** @class */ (function () {
                 _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
                 _sanshi_sanshi_component__WEBPACK_IMPORTED_MODULE_19__["SanshiComponent"],
                 _register_register_component__WEBPACK_IMPORTED_MODULE_20__["RegisterComponent"],
-                _admin_admin_component__WEBPACK_IMPORTED_MODULE_24__["AdminComponent"]
+                _admin_admin_component__WEBPACK_IMPORTED_MODULE_24__["AdminComponent"],
+                _upload_upload_component__WEBPACK_IMPORTED_MODULE_26__["UploadComponent"],
+                _album_album_component__WEBPACK_IMPORTED_MODULE_27__["AlbumComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1411,7 +1442,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadImageService", function() { return UploadImageService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
 
 
 
@@ -1422,21 +1457,215 @@ var UploadImageService = /** @class */ (function () {
         this.pi_129 = "192.168.1.129";
         this.pi_128 = "192.168.1.128";
         this.router = "93.49.6.246";
-        this.uploadUrl = "http://" + this.router + ":3000/upload/files";
+        this.uploadImagesUrl = "http://" + this.router + ":3000/upload/images";
+        this.uploadFilesUrl = "http://" + this.router + ":3000/upload/files";
     }
     UploadImageService.prototype.uploadMyImage = function (image) {
-        return this.http.post(this.uploadUrl, image);
+        return this.http.post(this.uploadImagesUrl, image, {
+            reportProgress: true,
+            observe: 'events'
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.errorMgmt));
+    };
+    UploadImageService.prototype.errorMgmt = function (error) {
+        var errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            // Get client-side error
+            errorMessage = error.error.message;
+        }
+        else {
+            // Get server-side error
+            errorMessage = "Error Code: " + error.status + "\nMessage: " + error.message;
+        }
+        console.log(errorMessage);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(errorMessage);
+    };
+    UploadImageService.prototype.uploadMyFiles = function (files) {
+        return this.http.post(this.uploadFilesUrl, files, {
+            reportProgress: true,
+            observe: 'events'
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.errorMgmt));
     };
     UploadImageService.ctorParameters = function () { return [
-        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
     ]; };
     UploadImageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
     ], UploadImageService);
     return UploadImageService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/upload/upload.component.css ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".vl {\n    border-left: 4px solid green;\n    height: 200px;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXBsb2FkL3VwbG9hZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksNEJBQTRCO0lBQzVCLGFBQWE7RUFDZiIsImZpbGUiOiJzcmMvYXBwL3VwbG9hZC91cGxvYWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi52bCB7XG4gICAgYm9yZGVyLWxlZnQ6IDRweCBzb2xpZCBncmVlbjtcbiAgICBoZWlnaHQ6IDIwMHB4O1xuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/upload/upload.component.ts ***!
+  \********************************************/
+/*! exports provided: UploadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadComponent", function() { return UploadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _upload_image_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../upload-image.service */ "./src/app/upload-image.service.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../auth.service */ "./src/app/auth.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+var UploadComponent = /** @class */ (function () {
+    function UploadComponent(_uploadImageService, _auth, _router) {
+        this._uploadImageService = _uploadImageService;
+        this._auth = _auth;
+        this._router = _router;
+        this.hint = "Choose images";
+        this.file = null;
+        this.files = [];
+        this.specialEvents = null;
+        this.statusBarImage = "";
+        //
+        this.hintFiles = "Choose files";
+        this.fileFiles = null;
+        this.files_files = [];
+        this.statusBar = "";
+        //
+        this.progress = 0;
+        this.progress_file = 0;
+    }
+    UploadComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._auth.checkToken()
+            .subscribe(function (res) { return _this.specialEvents = res; }, function (err) {
+            //  alert("Login is requred!")
+            if (err instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpErrorResponse"]) {
+                if (err.status === 500) {
+                    _this._router.navigate(['/login']);
+                }
+            }
+        });
+    };
+    UploadComponent.prototype.onMultipleImagesSelected = function (event) {
+        //  console.log(event)
+        this.hint = "";
+        for (var i = 0; i < event.target.files.length; i++) {
+            this.hint += event.target.files[i].name + " ";
+        }
+        // The file content itself
+        this.files = event.target.files;
+    };
+    UploadComponent.prototype.onImagesUpload = function () {
+        var _this = this;
+        var formData = new FormData();
+        for (var _i = 0, _a = this.files; _i < _a.length; _i++) {
+            var image = _a[_i];
+            formData.append('myImages', image);
+        }
+        this._uploadImageService.uploadMyImage(formData)
+            .subscribe(function (event) {
+            _this.files = [];
+            _this.hint = "Folder name";
+            switch (event.type) {
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].Sent:
+                    console.log('Request has been made!');
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].ResponseHeader:
+                    console.log('Response header has been received!');
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].UploadProgress:
+                    _this.progress = Math.round(event.loaded / event.total * 100);
+                    console.log("Uploaded! " + _this.progress + "%");
+                    _this.statusBarImage = 'Uploading.......';
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].Response:
+                    console.log('User successfully created!', event.body);
+                    _this.statusBarImage = 'Files successfully uploaded!';
+                    setTimeout(function () {
+                        _this.progress = 0;
+                    }, 1500);
+            }
+        });
+    };
+    ////////////////// Files ////////////////////////
+    UploadComponent.prototype.onMultipleFilesSelected = function (event) {
+        //  console.log(event)
+        this.hintFiles = "";
+        for (var i = 0; i < event.target.files.length; i++) {
+            this.hintFiles += event.target.files[i].name + " ";
+        }
+        // The file content itself
+        this.files_files = event.target.files;
+    };
+    UploadComponent.prototype.onFilesUpload = function () {
+        var _this = this;
+        var formData = new FormData();
+        for (var _i = 0, _a = this.files_files; _i < _a.length; _i++) {
+            var file = _a[_i];
+            formData.append('myFiles', file);
+        }
+        this._uploadImageService.uploadMyFiles(formData)
+            .subscribe(function (event) {
+            _this.files_files = [];
+            _this.hintFiles = "Choose files";
+            switch (event.type) {
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].Sent:
+                    console.log('Request has been made!');
+                    _this.statusBar = 'Request has been made!';
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].ResponseHeader:
+                    console.log('Response header has been received!');
+                    _this.statusBar = 'Response header has been received!';
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].UploadProgress:
+                    _this.progress_file = Math.round(event.loaded / event.total * 100);
+                    console.log("Uploaded! " + _this.progress_file + "%");
+                    _this.statusBar = 'Uploading.......';
+                    break;
+                case _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpEventType"].Response:
+                    console.log('User successfully created!', event.body);
+                    _this.statusBar = 'Files successfully uploaded!';
+                    setTimeout(function () {
+                        _this.progress_file = 0;
+                    }, 1500);
+            }
+        });
+    };
+    UploadComponent.ctorParameters = function () { return [
+        { type: _upload_image_service__WEBPACK_IMPORTED_MODULE_2__["UploadImageService"] },
+        { type: _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+    ]; };
+    UploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-upload',
+            template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./upload.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/upload/upload.component.html")).default,
+            styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./upload.component.css */ "./src/app/upload/upload.component.css")).default]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_upload_image_service__WEBPACK_IMPORTED_MODULE_2__["UploadImageService"], _auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+    ], UploadComponent);
+    return UploadComponent;
 }());
 
 

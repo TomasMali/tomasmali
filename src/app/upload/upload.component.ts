@@ -3,6 +3,7 @@ import { UploadImageService } from '../upload-image.service';
 import { AuthService } from '../auth.service';
 import { HttpErrorResponse, HttpEvent, HttpEventType } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
@@ -41,6 +42,8 @@ export class UploadComponent implements OnInit {
         }
       )
   }
+
+ 
 
 
 
