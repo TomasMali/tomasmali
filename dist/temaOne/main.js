@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card card-body bg-primary text-white py-5\">\n  <h2>Welcome To My Page</h2>\n  <p class=\"lead\">Here you can find some information about me! </p>\n</div>\n\n\n\n\n<div class=\"jumbotron mt-0\">\n\n  <div class=\"container about_me\">\n\n\n\n    <div style=\"text-align: center;\"> <b> Hello, I am Tomas Mali! </b> </div>\n    <br>\n    <p>\n      I have to tell something about myself. Sometimes it is hard to introduce yourself because you know yourself so\n      well\n      that you don't know where to start with. Let me give a try to see what kind of image you have about me through my\n      self-description.\n    </p>\n    <p>\n      <!--\n      I am 26 years old and I am from Albania, a little country situated in Southeast Europe on the Atlantic and Ionian\n      Sea.\n      I attended the high school in Italy (San Benedetto del Tronto) where I get the diploma with highest rank.\n      Since first year in high school I realized that\n      the technology is moving very fast and in the Computer Science area, jobs are getting more required from the big\n      companies. That's why i decided to\n      continue my studies from Computer Science University Of Padua where I have graduated in April 2018.\n      Since then I have started to explore, learn and create some small and medium projects on my own.\n      I am a very positive person about every aspect of life.\n      \n         The slideshow -->\n\n      There are many things I like to do, to see, and to\n      experience.\n      Here is a portion of that:\n      I like to travel a lot, I like to read good books, I like to make new friends every day, to be surrounded by\n      people.\n      I like to feel the music flowing on my face, I like to smell the wind coming from the ocean. I like to look at the\n      clouds in the sky with a blank mind, I like the land and i like the nature.\n\n      Of course, I am nowhere close to what I wantesd to be, yet. I am just someone who does some learning, some\n      research,\n      and\n      some writing. But my dream is still alive.\n    </p>\n    <p>\n      This is a brief introduction of myself. If you are interested in knowing more, read my resume or take a look at my\n      works. Do not expect too much, and keep your sense of humor.\n    </p>\n\n  </div>\n\n  <br>\n  <hr>\n  <div class=\"row\">\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card card-body bg-primary text-white py-5\">\n  <h2>Welcome To My Page</h2>\n  <p class=\"lead\">Here you can find some information about me! </p>\n</div>\n\n\n\n\n<div class=\"jumbotron mt-0 mb-0\">\n\n  <div class=\"container about_me\">\n\n\n\n    <div style=\"text-align: center;\"> <b> Hello, I am Tomas Mali! </b> </div>\n    <br>\n    <p>\n      I have to tell something about myself. Sometimes it is hard to introduce yourself because you know yourself so\n      well\n      that you don't know where to start with. Let me give a try to see what kind of image you have about me through my\n      self-description.\n    </p>\n    <p>\n      <!--\n      I am 26 years old and I am from Albania, a little country situated in Southeast Europe on the Atlantic and Ionian\n      Sea.\n      I attended the high school in Italy (San Benedetto del Tronto) where I get the diploma with highest rank.\n      Since first year in high school I realized that\n      the technology is moving very fast and in the Computer Science area, jobs are getting more required from the big\n      companies. That's why i decided to\n      continue my studies from Computer Science University Of Padua where I have graduated in April 2018.\n      Since then I have started to explore, learn and create some small and medium projects on my own.\n      I am a very positive person about every aspect of life.\n      \n         The slideshow -->\n\n      There are many things I like to do, to see, and to\n      experience.\n      Here is a portion of that:\n      I like to travel a lot, I like to read good books, I like to make new friends every day, to be surrounded by\n      people.\n      I like to feel the music flowing on my face, I like to smell the wind coming from the ocean. I like to look at the\n      clouds in the sky with a blank mind, I like the land and i like the nature.\n\n      Of course, I am nowhere close to what I wantesd to be, yet. I am just someone who does some learning, some\n      research,\n      and\n      some writing. But my dream is still alive.\n    </p>\n    <p>\n      This is a brief introduction of myself. If you are interested in knowing more, read my resume or take a look at my\n      works. Do not expect too much, and keep your sense of humor.\n    </p>\n\n  </div>\n\n  <br>\n  <hr>\n \n</div>");
 
 /***/ }),
 
@@ -147,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -172,6 +172,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -240,10 +242,11 @@ function __metadata(metadataKey, metadataValue) {
 }
 
 function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 }
@@ -281,14 +284,15 @@ function __exportStar(m, exports) {
 }
 
 function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
-    return {
+    if (o && typeof o.length === "number") return {
         next: function () {
             if (o && i >= o.length) o = void 0;
             return { value: o && o[i++], done: !o };
         }
     };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
 
 function __read(o, n) {
@@ -367,6 +371,21 @@ function __importStar(mod) {
 
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
 }
 
 
