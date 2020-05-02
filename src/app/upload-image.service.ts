@@ -13,8 +13,8 @@ export class UploadImageService {
   pi_129 = "192.168.1.129"
   pi_128 = "192.168.1.128"
   router = "93.49.6.246"
-  private uploadImagesUrl = "http://" + this.router + ":3000/upload/images";
-  private uploadFilesUrl = "http://" + this.router + ":3000/upload/files";
+  private uploadImagesUrl = "http://" + this.localhost + ":3000/upload/images";
+  private uploadFilesUrl = "http://" + this.localhost + ":3000/upload/files";
 
   constructor(private http: HttpClient) { }
 

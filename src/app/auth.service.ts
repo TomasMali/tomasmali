@@ -10,9 +10,9 @@ export class AuthService {
  router = "93.49.6.246"
 
 
-  private _registerUrl = "http://" + this.router + ":3000/api/register"
-  private _loginUrl = "http://" + this.router + ":3000/api/login";
-  private _checkToken = "http://" +this.router +  ":3000/api/checkToken"
+  private _registerUrl = "http://" + this.localhost + ":3000/api/register"
+  private _loginUrl = "http://" + this.localhost + ":3000/api/login";
+  private _checkToken = "http://" +this.localhost +  ":3000/api/checkToken"
 
 
 
